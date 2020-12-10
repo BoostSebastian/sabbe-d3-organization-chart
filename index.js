@@ -213,7 +213,9 @@ class TreeChart {
                 tag: 'svg',
                 selector: 'svg-chart-container'
             })
-            .attr('width', attrs.svgWidth)
+            .attr('width', $('#chartContainer').width($('#chartWrapper').parent().width()) 
+            // This change with JQuery make the svg resizeable
+            // Use div around with #chartWrapper
             .attr('height', attrs.svgHeight)
             .attr('font-family', attrs.defaultFont)
             .call(behaviors.zoom)
